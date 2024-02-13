@@ -1,0 +1,25 @@
+{
+  // コンテナの名前
+  "name": "fastapi-test",
+
+  // コンテナのイメージ
+  "image": "python:3.12-slim",
+
+  // ホストとの疎通ポート
+  "forwardPorts": [
+      5000
+  ],
+
+  // コンテナビルド時に実行するコマンド
+  "postCreateCommand": "apt-get update && pip3 install requests && pip3 install fastapi && pip3 install 'uvicorn[standard]'",
+
+  // VSCodeの拡張機能
+  "customizations": {
+      "vscode": {
+          "extensions": [
+              "ms-python.python",
+              "ms-python.vscode-pylance"
+          ]
+      }
+  }
+}
